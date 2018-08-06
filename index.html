@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title>MSC -モーニングコール-</title>
+  </head>
+
+  <body>
+      <p>起こしてやんよ‼</p>
+      <input type="time" name="time" id="time" />
+      <input type="button" value="set" onclick="set_time()" />
+
+      <script type="text/javascript" src="./_js/readSchedule.js"></script>
+  </body>
+
+  <script>
+  		var set_time = function() {
+  			var new_time = document.getElementById("time").value;
+
+        var utc_hh
+        var jst_hh = Number(new_time.substr(0,2));
+        if (jst_hh <= 8){
+          utc_hh = jst_hh + 15;
+        } else {
+          utc_hh = jst_hh - 9;
+        }
+
+        var hh = ('00' + utc_hh).slice(-2);
+
+			xhr.open('GET', 'https://mcs.piroshi07.com/setSchedule'+'?a=' + hh + new_time.substr(2,), true);
+			xhr.send(null);
+  		}
+  </script>
+
+</html>

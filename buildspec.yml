@@ -1,0 +1,25 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - pip install --upgrade pip
+      - pip install aws-xray-sdk -t _lambda/MCSdisableRule/vendored/.
+      - pip install aws-xray-sdk -t _lambda/MCSenableRule/vendored/.
+      - pip install aws-xray-sdk -t _lambda/MCSFirestCall/vendored/.
+      - pip install aws-xray-sdk -t _lambda/MCSgetSchedule/vendored/.
+      - pip install aws-xray-sdk -t _lambda/MCSsetSchedule/vendored/.
+      - bash ./_lambda/build.sh
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo echo Nothing to do in the build phase...
+  post_build:
+    commands:
+      - echo Build completed on 'date'
+
+artifacts:
+  type: zip
+  files:
+    - sam-output.yaml
