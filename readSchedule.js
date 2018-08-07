@@ -1,12 +1,13 @@
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
-        var InfoCron = this.response;
-        var HHMM = InfoCron.substr(8,2)+":"+InfoCron.substr(5,2)+"だよーん"
-		document.write(HHMM)
-
-        console.log(InfoCron)
-        console.log(HHMM)        
+        var data = this.response;
+        var str = data.ScheduleExpression;
+        var hhmm = str.substr(8,2) + ":" + str.substr(5,2);
+		document.getElementById("time").value = hhmm;
+//        console.log(data);
+//        console.log(str);
+//        console.log(hhmm);
         };
 };
 
