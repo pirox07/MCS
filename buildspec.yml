@@ -2,7 +2,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - bash /_lambda/build.sh
+      - bash ./_lambda/build.sh
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
