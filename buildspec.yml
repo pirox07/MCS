@@ -2,9 +2,17 @@ version: 0.1
 phases:
   install:
     commands:
-      - aws s3 mb s3://mcs.codepipeline --region us-east-1
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket bucket-name 
-                                   --output-template-file outputSamTemplate.yaml
+      - bash _/lambda/build.sh
+  pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo echo Nothing to do in the build phase...
+  post_build:
+    commands:
+      - echo Build completed on 'date'
+
 artifacts:
   type: zip
   files:
