@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title>MSC</title>
+  </head>
+
+  <body>
+      <p>起こしてやんよ‼</p>
+      <input type="time" name="time" id="time" />
+      <input type="button" value="set" onclick="set_time()" />
+
+      <script type="text/javascript" src="readSchedule.js"></script>
+  </body>
+
+  <script>
+  		var set_time = function() {
+  			var new_time = document.getElementById("time").value;
+			xhr.open('GET', 'https://kr4ny6a3b1.execute-api.us-east-1.amazonaws.com/dev/mcs-set-schedule'+'?a='+new_time, true);
+			xhr.send(null);
+  		}
+  </script>
+
+</html>
