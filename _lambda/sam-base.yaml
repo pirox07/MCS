@@ -10,7 +10,7 @@ Resources:
       Variables:
         getSchedule: !Ref MCSgetSchedule
         setSchedule: !Ref MCSsetSchedule
-  Lamdba_getSchedule:
+  LamdbaGetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: lambda_function.lambda_handler
@@ -33,7 +33,7 @@ Resources:
             Method: GET
       Environment:
         Variables:
-  lambda_setSchedule:
+  lambdaSetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
       Handler: lambda_function.lambda_handler
