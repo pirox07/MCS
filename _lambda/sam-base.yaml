@@ -31,8 +31,8 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /getSchedule
             Method: GET
-      Environment:
-        Variables:
+#      Environment:
+#        Variables:
   lambdaSetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
