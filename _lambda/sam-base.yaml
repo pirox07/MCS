@@ -59,7 +59,7 @@ Resources:
   iam_MCS-lambda:
     Type: AWS::IAM::Role
     Properties:
-        AssumeRolePolicyDocument:
+#        AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
           - Effect: Allow
