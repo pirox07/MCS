@@ -66,6 +66,7 @@ Resources:
             Principal:
               Service: lambda.amazonaws.com
             Action: "sts:AssumeRole"
+'''
     policies:
       -
         PolicyName: "MCS_access-cron_for_lambda"
@@ -87,3 +88,4 @@ Resources:
                   "logs:CreateLogStream",
                   "logs:PutLogEvents"]
                 Resource: "*"
+'''
