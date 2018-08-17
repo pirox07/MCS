@@ -54,8 +54,8 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /setSchedule
             Method: GET
-      Environment:
-        Variables:
+#      Environment:
+#        Variables:
   iam_MCS-lambda:
     Type: AWS::IAM::Role
     Properties:
