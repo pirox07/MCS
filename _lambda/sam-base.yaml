@@ -66,26 +66,24 @@ Resources:
             Principal:
               Service: lambda.amazonaws.com
             Action: "sts:AssumeRole"
-'''
-    policies:
-      -
-        PolicyName: "MCS_access-cron_for_lambda"
-        PolicyDocument:
-            Version: "2012-10-17"
-            Statement:
-              -
-                Effect: "Allow"
-                Action: "events:*"
-                Resource: "*"
-              -
-                Effect: "Allow"
-                Action: "iam:PassRole"
-                Resource: "arn:aws:iam::*:role/AWS_Events_Invoke_Targets"
-              -
-                Effect: "Allow"
-                Action": [
-                  "logs:CreateLogGroup",
-                  "logs:CreateLogStream",
-                  "logs:PutLogEvents"]
-                Resource: "*"
-'''
+#    policies:
+#      -
+#        PolicyName: "MCS_access-cron_for_lambda"
+#        PolicyDocument:
+#            Version: "2012-10-17"
+#            Statement:
+#              -
+#                Effect: "Allow"
+#                Action: "events:*"
+#                Resource: "*"
+#              -
+#                Effect: "Allow"
+#                Action: "iam:PassRole"
+#                Resource: "arn:aws:iam::*:role/AWS_Events_Invoke_Targets"
+#              -
+#                Effect: "Allow"
+#                Action": [
+#                  "logs:CreateLogGroup",
+#                  "logs:CreateLogStream",
+#                  "logs:PutLogEvents"]
+#                Resource: "*"
