@@ -1,5 +1,14 @@
 import boto3
+import os
 import json
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'vendored'))
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.core import patch
+
+patch(['boto3'])
+
 def lambda_handler(event, context):
 
     print(event['queryStringParameters']['a'])
@@ -9,8 +18,8 @@ def lambda_handler(event, context):
     print(hh)
     print(mm)
     
-    test_event = boto3.client('events', region_name='us-east-1')
-    rule_Name = 'exec_time'
+    test_event = boto3.client('events')
+    rule_Name = os.environ['RULE_NAME']
     
     test_event.put_rule(
         Name = rule_Name,

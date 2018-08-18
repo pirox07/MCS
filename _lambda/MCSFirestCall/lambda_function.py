@@ -1,4 +1,12 @@
 import boto3
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'vendored'))
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.core import patch
+
+patch(['boto3'])
 
 def lambda_handler(intent, session):
     client = boto3.client('connect', region_name='ap-southeast-2')

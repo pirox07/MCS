@@ -8,8 +8,8 @@ Resources:
       StageName: Prod
       DefinitionUri: swagger.yaml
       Variables:
-        MCSgetSchedule: !Ref MCSgetSchedule
-        MCSsetSchedule: !Ref MCSsetSchedule
+        getSchedule: !Ref MCSgetSchedule
+        setSchedule: !Ref MCSsetSchedule
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -23,6 +23,7 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 15
+      Tracing: Active
       Role: 'role_arn_MCS-lambda'
       Events:
         Api1:
@@ -31,8 +32,9 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /getSchedule
             Method: GET
-#      Environment:
-#        Variables:
+      Environment:
+        Variables:
+          RULE_NAME: rule_name_placeholder
   MCSsetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -46,6 +48,7 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 15
+      Tracing: Active
       Role: 'role_arn_MCS-lambda'
       Events:
         Api1:
@@ -54,8 +57,9 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /setSchedule
             Method: GET
-#      Environment:
-#        Variables:
+      Environment:
+        Variables:
+          RULE_NAME: rule_name_placeholder
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
 #    Properties:
