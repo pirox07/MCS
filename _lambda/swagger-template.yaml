@@ -13,7 +13,7 @@ x-amazon-apigateway-request-validators:
     validateRequestParameters: True
 paths:
   /MCSgetSchedule:
-    x-amazon-apigateway-get-method:
+    get:
       produces:
       - application/json
       responses:
@@ -61,7 +61,7 @@ paths:
           application/json: '{"statusCode": 200}'
         type: mock
   /MCSsetSchedule:
-    x-amazon-apigateway-get-method:
+    get:
 #      x-amazon-apigateway-request-validator: 'params-only'
 #      parameters:
       produces:
