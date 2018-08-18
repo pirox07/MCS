@@ -23,6 +23,7 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 15
+      Tracing: Active
       Role: 'role_arn_MCS-lambda'
       Events:
         Api1:
@@ -46,6 +47,7 @@ Resources:
       Description: ''
       MemorySize: 128
       Timeout: 15
+      Tracing: Active
       Role: 'role_arn_MCS-lambda'
       Events:
         Api1:
