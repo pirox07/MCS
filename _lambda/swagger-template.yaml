@@ -12,7 +12,7 @@ x-amazon-apigateway-request-validators:
     validateRequestBody: False
     validateRequestParameters: True
 paths:
-  /getSchedule:
+  /MCSgetSchedule:
     x-amazon-apigateway-any-method:
       produces:
       - application/json
@@ -60,7 +60,7 @@ paths:
         requestTemplates:
           application/json: '{"statusCode": 200}'
         type: mock
-  /setSchedule:
+  /MCSsetSchedule:
     x-amazon-apigateway-any-method:
       x-amazon-apigateway-request-validator: 'params-only'
       parameters:
