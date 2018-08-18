@@ -23,8 +23,7 @@ paths:
         responses:
           default:
             statusCode: 200
-        uri: arn:aws:apigateway:region_placeholder:lambda:path/2015-03-31/functions/arn:aws:lambda:region_placeholder:account_placeholder:function:    x-amazon-apigateway-any-method:
-getSchedule}:live/invocations
+        uri: arn:aws:apigateway:region_placeholder:lambda:path/2015-03-31/functions/arn:aws:lambda:region_placeholder:account_placeholder:function:${stageVariables.MCSgetSchedule}:live/invocations
         passthroughBehavior: when_no_match
         httpMethod: get
         type: aws_proxy
@@ -63,9 +62,9 @@ getSchedule}:live/invocations
         type: mock
   /MCSsetSchedule:
     x-amazon-apigateway-get-method:
-      x-amazon-apigateway-request-validator: 'params-only'
-      parameters:
-      produces:
+#      x-amazon-apigateway-request-validator: 'params-only'
+#      parameters:
+#      produces:
       - application/json
       responses:
         200:
@@ -76,7 +75,7 @@ getSchedule}:live/invocations
         responses:
           default:
             statusCode: 200
-        uri: arn:aws:apigateway:region_placeholder:lambda:path/2015-03-31/functions/arn:aws:lambda:region_placeholder:account_placeholder:function:${stageVariables.setSchedule}:live/invocations
+        uri: arn:aws:apigateway:region_placeholder:lambda:path/2015-03-31/functions/arn:aws:lambda:region_placeholder:account_placeholder:function:${stageVariables.MCSsetSchedule}:live/invocations
         passthroughBehavior: when_no_match
         httpMethod: GET
         type: aws_proxy
