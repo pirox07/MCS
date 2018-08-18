@@ -60,6 +60,39 @@ Resources:
       Environment:
         Variables:
           RULE_NAME: rule_name_placeholder
+  MCSdisableRule:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.6
+      CodeUri: MCSdisableRule
+      Description: ''
+      MemorySize: 128
+      Timeout: 3
+      Tracing: Active
+      Role: 'role_arn_MCS-lambda'
+  MCSenableRule:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.6
+      CodeUri: MCSenableRule
+      Description: ''
+      MemorySize: 128
+      Timeout: 3
+      Tracing: Active
+      Role: 'role_arn_MCS-lambda'
+  MCSFirestCall:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.6
+      CodeUri: MCSFirestCall
+      Description: ''
+      MemorySize: 128
+      Timeout: 3
+      Tracing: Active
+      Role: 'role_arn_MCS-lambda'
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
 #    Properties:
