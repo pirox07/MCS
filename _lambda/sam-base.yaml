@@ -71,6 +71,9 @@ Resources:
       Timeout: 3
       Tracing: Active
       Role: 'role_arn_MCS-lambda'
+      Environment:
+        Variables:
+          RULE_NAME: rule_name_placeholder
   MCSenableRule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -82,6 +85,9 @@ Resources:
       Timeout: 3
       Tracing: Active
       Role: 'role_arn_MCS-lambda'
+      Environment:
+        Variables:
+          RULE_NAME: rule_name_placeholder
   MCSFirestCall:
     Type: 'AWS::Serverless::Function'
     Properties:

@@ -13,7 +13,7 @@ client = boto3.client('events')
 
 def lambda_handler(event, context):
 
-    rule_Name = 'exec_time'
+    rule_Name = os.environ['RULE_NAME']
 
     response1 = client.disable_rule(
         Name = rule_Name
