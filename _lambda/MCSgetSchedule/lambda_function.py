@@ -11,8 +11,8 @@ patch(['boto3'])
 
 def lambda_handler(event, context):
 
-    test_event = boto3.client('events', region_name='us-east-1')
-    rule_Name = 'exec_time'
+    test_event = boto3.client('events')
+    rule_Name = os.environ['RULE_NAME']
     
     response = test_event.describe_rule(
         Name = rule_Name

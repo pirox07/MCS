@@ -18,8 +18,8 @@ def lambda_handler(event, context):
     print(hh)
     print(mm)
     
-    test_event = boto3.client('events', region_name='us-east-1')
-    rule_Name = 'exec_time'
+    test_event = boto3.client('events')
+    rule_Name = os.environ['RULE_NAME']
     
     test_event.put_rule(
         Name = rule_Name,

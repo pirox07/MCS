@@ -32,8 +32,9 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /getSchedule
             Method: GET
-#      Environment:
-#        Variables:
+      Environment:
+        Variables:
+          RULE_NAME: rule_name_placeholder
   MCSsetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -56,8 +57,9 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /setSchedule
             Method: GET
-#      Environment:
-#        Variables:
+      Environment:
+        Variables:
+          RULE_NAME: rule_name_placeholder
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
 #    Properties:
