@@ -9,13 +9,13 @@ from aws_xray_sdk.core import patch
 patch(['boto3'])
 
 def lambda_handler(intent, session):
-    client = boto3.client('connect', region_name='ap-southeast-2')
+    client = boto3.client('connect', region_name=os.environ['CONTACT_REGION'])
     response = client.start_outbound_voice_contact(
-        DestinationPhoneNumber='+819019473068',
-        ContactFlowId='88a67fb7-e18b-4766-94e6-4e0bcfa766fb',
-        InstanceId='65e55b10-58a8-4182-a8b1-8c4775441a61',
+        DestinationPhoneNumber=os.environ['DST_PHONE_NUMBER'],
+        ContactFlowId=os.environ['CONTACT_FLOW_ID'],
+        InstanceId=os.environ['INSTANCE_ID'],
 #        ClientToken='string',
-        SourcePhoneNumber='+815032014918',
+        SourcePhoneNumber=os.environ['SRC_PHONE_NUMBER'],
 #       QueueId='string',
 #        Attributes={'string': 'string'}
     )

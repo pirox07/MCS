@@ -93,6 +93,13 @@ Resources:
       Timeout: 3
       Tracing: Active
       Role: 'role_arn_MCS-lambda'
+      Environment:
+        Variables:
+          CONTACT_REGION: 'contact_region_placeholder'
+          DST_PHONE_NUMBER: 'dst_phone_number_placeholder'
+          SRC_PHONE_NUMBER: 'src_phone_number_placeholder'
+          CONTACT_FLOW_ID: 'contact_flow_id_placeholder'
+          INSTANCE_ID: 'instance_id_placeholder'
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
 #    Properties:
