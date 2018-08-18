@@ -8,8 +8,8 @@ Resources:
       StageName: Prod
       DefinitionUri: swagger.yaml
       Variables:
-        MCSgetSchedule: !Ref MCSgetSchedule
-        MCSsetSchedule: !Ref MCSsetSchedule
+        getSchedule: !Ref MCSgetSchedule
+        setSchedule: !Ref MCSsetSchedule
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
