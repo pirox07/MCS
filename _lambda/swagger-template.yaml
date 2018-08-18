@@ -64,7 +64,7 @@ paths:
     x-amazon-apigateway-get-method:
 #      x-amazon-apigateway-request-validator: 'params-only'
 #      parameters:
-#      produces:
+      produces:
       - application/json
       responses:
         200:
