@@ -13,7 +13,7 @@ x-amazon-apigateway-request-validators:
     validateRequestParameters: True
 paths:
   /MCSgetSchedule:
-    x-amazon-apigateway-any-method:
+    x-amazon-apigateway-get-method:
       produces:
       - application/json
       responses:
@@ -23,7 +23,8 @@ paths:
         responses:
           default:
             statusCode: 200
-        uri: arn:aws:apigateway:region_placeholder:lambda:path/2015-03-31/functions/arn:aws:lambda:region_placeholder:account_placeholder:function:${stageVariables.getSchedule}:live/invocations
+        uri: arn:aws:apigateway:region_placeholder:lambda:path/2015-03-31/functions/arn:aws:lambda:region_placeholder:account_placeholder:function:    x-amazon-apigateway-any-method:
+getSchedule}:live/invocations
         passthroughBehavior: when_no_match
         httpMethod: get
         type: aws_proxy
@@ -61,7 +62,7 @@ paths:
           application/json: '{"statusCode": 200}'
         type: mock
   /MCSsetSchedule:
-    x-amazon-apigateway-any-method:
+    x-amazon-apigateway-get-method:
       x-amazon-apigateway-request-validator: 'params-only'
       parameters:
       produces:
