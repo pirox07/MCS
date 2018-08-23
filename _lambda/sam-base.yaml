@@ -106,6 +106,16 @@ Resources:
           SRC_PHONE_NUMBER: 'src_phone_number_placeholder'
           CONTACT_FLOW_ID: 'contact_flow_id_placeholder'
           INSTANCE_ID: 'instance_id_placeholder'
+  CallTime:
+    Type: AWS::Events::Rule
+    Properties:
+      EventPattern: JSON object
+      Name: 'call_time'
+      ScheduleExpression: 'cron(00 00 * * ? *)'
+      State: 'DISABLED'
+      Targets:
+        - Id : !Ref MCSFirestCall
+
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
 #    Properties:
