@@ -121,6 +121,7 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Name: 'enable_call_time'
+      ScheduleExpression: 'cron(00 00 * * ? *)'
       State: 'DISABLED'
       Targets:
         - Arn : !GetAtt
