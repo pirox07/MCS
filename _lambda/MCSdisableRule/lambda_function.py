@@ -13,7 +13,7 @@ client = boto3.client('events')
 
 def lambda_handler(event, context):
 
-    rule_Name = os.environ['RULE_NAME']
+    rule_Name = "call_time"
 
     response1 = client.disable_rule(
         Name = rule_Name
@@ -22,16 +22,16 @@ def lambda_handler(event, context):
     info_rule = client.describe_rule(
         Name = rule_Name
     )
-    
+
     response2 = client.put_rule(
-        Name='enable_exec_time',
+        Name='enable_call_time',
         ScheduleExpression = info_rule['ScheduleExpression'] ,
 #        EventPattern='string',
         State='ENABLED',
 #        Description='string',
 #        RoleArn='string'
     )
-'''    
+'''
     client.put_targets(
         Rule = 'enable_exec_time',
         Targets=[

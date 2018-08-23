@@ -13,9 +13,9 @@ client = boto3.client('events')
 def lambda_handler(event, context):
 
     client.enable_rule(
-        Name = os.environ['RULE_NAME']
+        Name = 'call_time'
     )
 
     client.disable_rule(
-        Name = 'enable_exec_time'
+        Name = 'enable_call_time'
     )
