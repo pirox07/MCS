@@ -34,7 +34,7 @@ Resources:
             Method: GET
       Environment:
         Variables:
-          RULE_NAME: rule_name_placeholder
+          RULE_NAME: MCSFirestCall
   MCSsetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -59,7 +59,7 @@ Resources:
             Method: GET
       Environment:
         Variables:
-          RULE_NAME: rule_name_placeholder
+          RULE_NAME: MCSFirestCall
   MCSdisableRule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -73,7 +73,7 @@ Resources:
       Role: 'role_arn_MCS-lambda'
       Environment:
         Variables:
-          RULE_NAME: rule_name_placeholder
+          RULE_NAME: MCSFirestCall
   MCSenableRule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -87,7 +87,7 @@ Resources:
       Role: 'role_arn_MCS-lambda'
       Environment:
         Variables:
-          RULE_NAME: rule_name_placeholder
+          RULE_NAME: MCSFirestCall
   MCSFirestCall:
     Type: 'AWS::Serverless::Function'
     Properties:
