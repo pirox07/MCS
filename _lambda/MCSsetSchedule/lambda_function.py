@@ -17,10 +17,10 @@ def lambda_handler(event, context):
     mm = (event['queryStringParameters']['a'])[3:5]
     print(hh)
     print(mm)
-    
+
     test_event = boto3.client('events')
-    rule_Name = os.environ['RULE_NAME']
-    
+    rule_Name = 'call_time'
+
     test_event.put_rule(
         Name = rule_Name,
         ScheduleExpression = 'cron(' + mm +' ' + hh + ' * * ? *)'

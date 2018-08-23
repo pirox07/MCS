@@ -31,14 +31,3 @@ def lambda_handler(event, context):
 #        Description='string',
 #        RoleArn='string'
     )
-'''
-    client.put_targets(
-        Rule = 'enable_exec_time',
-        Targets=[
-            {
-                    'Id': 'cloud9-MCSenableRule-MCSenableRule-RUQ20ZIROEFC',
-                    'Arn': 'arn:aws:lambda:us-east-1:086142515727:function:cloud9-MCSenableRule-MCSenableRule-RUQ20ZIROEFC'
-            }
-        ]
-    )
-'''
