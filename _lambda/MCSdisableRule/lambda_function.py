@@ -27,7 +27,7 @@ def lambda_handler(event, context):
         Name='enable_call_time',
         ScheduleExpression = info_rule['ScheduleExpression'] ,
 #        EventPattern='string',
-        State='ENABLED',
+        State='ENABLED'
 #        Description='string',
 #        RoleArn='string'
     )
