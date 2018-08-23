@@ -10,6 +10,12 @@ Resources:
       Variables:
         getSchedule: !Ref MCSgetSchedule
         setSchedule: !Ref MCSsetSchedule
+  ApiBasePathMapping:
+    Type: AWS::ApiGateway::BasePathMapping
+    Properties:
+      DomainName: 'My_Domain_Name_placeholder'
+      RestApiId: !Ref ApiGatewayApi
+      Stage: 'Prod'
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -32,9 +38,6 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /getSchedule
             Method: GET
-#      Environment:
-#        Variables:
-#          RULE_NAME: MCSFirestCall
   MCSsetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -57,9 +60,6 @@ Resources:
             RestApiId: !Ref ApiGatewayApi
             Path: /setSchedule
             Method: GET
-#      Environment:
-#        Variables:
-#          RULE_NAME: MCSFirestCall
   MCSdisableRule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -71,9 +71,6 @@ Resources:
       Timeout: 3
       Tracing: Active
       Role: 'role_arn_MCS-lambda'
-#      Environment:
-#        Variables:
-#          RULE_NAME: MCSFirestCall
   MCSenableRule:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -85,9 +82,6 @@ Resources:
       Timeout: 3
       Tracing: Active
       Role: 'role_arn_MCS-lambda'
-#      Environment:
-#        Variables:
-#          RULE_NAME: MCSFirestCall
   MCSFirestCall:
     Type: 'AWS::Serverless::Function'
     Properties:
@@ -128,7 +122,6 @@ Resources:
             - MCSenableRule
             - Arn
           Id : !Ref MCSenableRule
-
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
 #    Properties:
