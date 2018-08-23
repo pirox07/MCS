@@ -10,12 +10,12 @@ Resources:
       Variables:
         getSchedule: !Ref MCSgetSchedule
         setSchedule: !Ref MCSsetSchedule
-  ApiBasePathMapping:
-    Type: AWS::ApiGateway::BasePathMapping
-    Properties:
-      DomainName: 'My_Domain_Name_placeholder'
-      RestApiId: !Ref ApiGatewayApi
-      Stage: 'ApiGatewayApi.Prod.Stage'
+#  ApiBasePathMapping:
+#    Type: AWS::ApiGateway::BasePathMapping
+#    Properties:
+#      DomainName: 'My_Domain_Name_placeholder'
+#      RestApiId: !Ref ApiGatewayApi
+#      Stage: 'ApiGatewayApi.Prod.Stage'
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
