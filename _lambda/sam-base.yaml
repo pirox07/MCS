@@ -117,6 +117,16 @@ Resources:
             - MCSFirestCall
             - Arn
           Id : !Ref MCSFirestCall
+  EnableCallTimeRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Name: 'enable_call_time'
+      State: 'DISABLED'
+      Targets:
+        - Arn : !GetAtt
+            - MCSenableRule
+            - Arn
+          Id : !Ref MCSenableRule
 
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
