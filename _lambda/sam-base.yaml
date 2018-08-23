@@ -116,8 +116,7 @@ Resources:
         - Arn : !GetAtt
             - MCSFirestCall
             - Arn
-        - Id : !Ref MCSFirestCall
-
+          Id : !Ref MCSFirestCall
 
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
