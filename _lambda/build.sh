@@ -9,7 +9,7 @@ cat swagger-template.yaml | sed "s/account_placeholder/${AWS_ACCOUNT}/g" \
 
 cat sam-base.yaml | sed "s/bucket_placeholder/${AWS_BUCKET}/g" \
                   | sed "s/role_arn_MCS-lambda/${MCS_LAMBDA_ROLE_ARN}/g" \
-  #                | sed "s/rule_name_placeholder/${MCS_RULE_NAME}/g" \
+#                | sed "s/rule_name_placeholder/${MCS_RULE_NAME}/g" \
                   | sed "s/contact_region_placeholder/${MCS_CONTACT_REGION}/g" \
                   | sed "s/dst_phone_number_placeholder/${MCS_DST_PHONE_NUMBER}/g" \
                   | sed "s/src_phone_number_placeholder/${MCS_SRC_PHONE_NUMBER}/g" \
