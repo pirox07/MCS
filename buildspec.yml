@@ -9,10 +9,8 @@ phases:
       - pip install aws-xray-sdk -t _lambda/MCSgetSchedule/vendored/.
       - pip install aws-xray-sdk -t _lambda/MCSsetSchedule/vendored/.
       - bash ./_lambda/build.sh
-      - aws s3 cp ./index.html s3://${MCS_BUCKET_NAME}/ --acl public-read
-      - aws s3 cp ./_js/getSchedule.js s3://${MCS_BUCKET_NAME}&"/_js" --acl public-read
-
-
+      - aws s3 cp ./index.html s3://${MCS_BUCKET_NAME}/indes.html --acl public-read
+      - aws s3 cp ./_js/getSchedule.js s3://${MCS_BUCKET_NAME}/js/ --acl public-read
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
