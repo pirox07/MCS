@@ -20,7 +20,7 @@ def lambda_handler(event, context):
     )
 
     info_rule = client.describe_rule(
-        Name = rule_Name
+        Name = call_time
     )
 
     response2 = client.put_rule(
