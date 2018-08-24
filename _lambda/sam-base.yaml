@@ -15,8 +15,8 @@ Resources:
     Properties:
       DomainName: 'My_Domain_Name_placeholder'
       RestApiId: !Ref ApiGatewayApi
-       stage: Prod
-#      Stage: 'ApiGatewayApi.Prod.Stage'
+#       stage: Prod
+      Stage: ApiGatewayApi.Prod"Stage"
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
