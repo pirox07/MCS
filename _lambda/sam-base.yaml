@@ -13,14 +13,11 @@ Resources:
   ApiBasePathMapping:
     Type: AWS::ApiGateway::BasePathMapping
     Properties:
-#      BasePath: 'Prod'
+      BasePath: 'test'
       DomainName: 'My_Domain_Name_placeholder'
-      RestApiId: !GetAtt
-          - ApiGatewayApi
-          - Stage
-#      Stage: Prod
+      Stage: 'Prod'
 #      Stage: ApiGatewayApi.Prod"Stage"
-      Stage: !Ref ApiGatewayApi.StageName
+#      Stage: !Ref ApiGatewayApi.StageName
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
