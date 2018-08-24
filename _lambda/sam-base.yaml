@@ -107,7 +107,7 @@ Resources:
     Properties:
       Name: 'call_time'
       ScheduleExpression: 'cron(00 00 * * ? *)'
-      State: 'DISABLED'
+      State: 'ENABLED'
       Targets:
         - Arn : !GetAtt
             - MCSFirestCall

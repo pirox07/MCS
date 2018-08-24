@@ -13,7 +13,7 @@ client = boto3.client('events')
 
 def lambda_handler(event, context):
 
-    rule_Name = "call_time"
+    rule_Name = 'call_time'
 
     response1 = client.disable_rule(
         Name = rule_Name
