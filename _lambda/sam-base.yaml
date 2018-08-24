@@ -15,7 +15,9 @@ Resources:
     Properties:
 #      BasePath: 'Prod'
       DomainName: 'My_Domain_Name_placeholder'
-      RestApiId: !Ref ApiGatewayApi
+      RestApiId: !GetAtt
+          - ApiGatewayApi
+          - StageName
 #      Stage: Prod
 #      Stage: ApiGatewayApi.Prod"Stage"
       Stage: !Ref ApiGatewayApi.StageName
