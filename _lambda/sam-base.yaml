@@ -16,9 +16,9 @@ Resources:
 #      BasePath: 'Prod'
       DomainName: 'My_Domain_Name_placeholder'
       RestApiId: !Ref ApiGatewayApi
-      Stage: Prod
+#      Stage: Prod
 #      Stage: ApiGatewayApi.Prod"Stage"
-#      Stage: !Ref ApiGatewayApi.Stage
+      Stage: !Ref ApiGatewayApi.StageName
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
