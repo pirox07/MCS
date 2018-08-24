@@ -17,7 +17,7 @@ Resources:
       DomainName: 'My_Domain_Name_placeholder'
       RestApiId: !GetAtt
           - ApiGatewayApi
-          - StageName
+          - Stage
 #      Stage: Prod
 #      Stage: ApiGatewayApi.Prod"Stage"
       Stage: !Ref ApiGatewayApi.StageName
