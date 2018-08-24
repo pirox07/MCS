@@ -13,7 +13,7 @@ Resources:
   ApiBasePathMapping:
     Type: AWS::ApiGateway::BasePathMapping
     Properties:
-      BasePath: '/Prod'
+      BasePath: 'Prod'
       DomainName: 'My_Domain_Name_placeholder'
       RestApiId: !Ref ApiGatewayApi
 #      Stage: Prod
