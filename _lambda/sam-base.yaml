@@ -13,7 +13,6 @@ Resources:
   ApiBasePathMapping:
     Type: AWS::ApiGateway::BasePathMapping
     Properties:
-      BasePath: 'test'
       DomainName: 'My_Domain_Name_placeholder'
 #      Stage: !Ref StageName
 #      Stage: !Ref Prod
@@ -21,7 +20,7 @@ Resources:
       Stage: ApiGatewayApiProdStage
 #      Stage: ApiGatewayApi.Prod"Stage"
 #      Stage: !Ref ApiGatewayApi.StageName
-      DependsOn: ApiGatewayApi
+#      DependsOn: ApiGatewayApi
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
