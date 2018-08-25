@@ -15,11 +15,11 @@ Resources:
     Properties:
       BasePath: 'test'
       DomainName: 'My_Domain_Name_placeholder'
-      Stage: !Ref StageName
+#      Stage: !Ref StageName
 #      Stage: !Ref Prod
 #      Stage: 'Prod'
 #      Stage: ApiGatewayApi.Prod"Stage"
-#      Stage: !Ref ApiGatewayApi.StageName
+      Stage: !Ref ApiGatewayApi.StageName
       DependsOn:
         - ApiGatewayApi
   MCSgetSchedule:
