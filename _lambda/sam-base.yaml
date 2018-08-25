@@ -18,10 +18,10 @@ Resources:
 #      Stage: !Ref StageName
 #      Stage: !Ref Prod
 #      Stage: 'Prod'
-      Stage: Prod
+      Stage: ApiGatewayApiProdStage
 #      Stage: ApiGatewayApi.Prod"Stage"
 #      Stage: !Ref ApiGatewayApi.StageName
-#      DependsOn: ApiGatewayApi
+      DependsOn: ApiGatewayApi
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
