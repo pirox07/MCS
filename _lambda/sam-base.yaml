@@ -18,8 +18,9 @@ Resources:
 #      Stage: !Ref StageName
 #      Stage: !Ref Prod
 #      Stage: 'Prod'
+      Stage: Prod
 #      Stage: ApiGatewayApi.Prod"Stage"
-      Stage: !Ref ApiGatewayApi.StageName
+#      Stage: !Ref ApiGatewayApi.StageName
       DependsOn:
         - ApiGatewayApi
   MCSgetSchedule:
