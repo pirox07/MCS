@@ -111,7 +111,7 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Name: 'call_time'
-      ScheduleExpression: 'cron(15 14 * * ? *)'
+      ScheduleExpression: 'cron(25 14 * * ? *)'
       State: 'ENABLED'
       Targets:
         - Arn : !GetAtt
