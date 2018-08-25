@@ -15,11 +15,13 @@ Resources:
     Properties:
       BasePath: 'test'
       DomainName: 'My_Domain_Name_placeholder'
-      Stage: !Ref ApiGatewayApi.Prod
+      Stage: !Ref Prod
 #      Stage: !Ref Prod
 #      Stage: 'Prod'
 #      Stage: ApiGatewayApi.Prod"Stage"
 #      Stage: !Ref ApiGatewayApi.StageName
+      DependsOn:
+        - ApiGatewayApi
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
     Properties:
