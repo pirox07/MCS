@@ -19,7 +19,7 @@ Resources:
 #      Stage: 'Prod'
 #      Stage: ApiGatewayApiProdStage
       RestApiId: !Ref ApiGatewayApi
-      Stage: !Ref ApiGatewayApiProdStage.Stage
+      Stage: !Ref ApiGatewayApi.Stage
 #      Stage: ApiGatewayApi.Prod"Stage"
 #      Stage: !Ref ApiGatewayApi.StageName
     DependsOn: ApiGatewayApi
