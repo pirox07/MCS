@@ -14,8 +14,14 @@ Resources:
     Type: AWS::ApiGateway::BasePathMapping
     Properties:
       DomainName: 'My_Domain_Name_placeholder'
+#      Stage: !Ref StageName
+#      Stage: !Ref Prod
+#      Stage: 'Prod'
+#      Stage: ApiGatewayApiProdStage
       RestApiId: !Ref ApiGatewayApi
       Stage: !Ref ApiGatewayApi.Stage
+#      Stage: ApiGatewayApi.Prod"Stage"
+#      Stage: !Ref ApiGatewayApi.StageName
     DependsOn: ApiGatewayApi
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
@@ -106,10 +112,12 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Name: 'call_time'
-      ScheduleExpression: 'cron(00 01 * * ? *)'
+      ScheduleExpression: 'cron(45 00 * * ? *)'
       State: 'ENABLED'
       Targets:
-        - Arn : !GetAtt MCSFirestCall.Arn
+        - Arn : !GetAtt
+            - MCSFirestCall
+            - Arn
           Id : !Ref MCSFirestCall
   EnableCallTimeRule:
     Type: AWS::Events::Rule
@@ -118,7 +126,9 @@ Resources:
       ScheduleExpression: 'cron(00 00 * * ? *)'
       State: 'DISABLED'
       Targets:
-        - Arn : !GetAtt MCSenableRule.Arn
+        - Arn : !GetAtt
+            - MCSenableRule
+            - Arn
           Id : !Ref MCSenableRule
   PermissionForEventsToInvokeLambda1:
     Type: AWS::Lambda::Permission
