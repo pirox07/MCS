@@ -134,7 +134,7 @@ Resources:
   PermissionForEventsToInvokeLambda2:
     Type: AWS::Lambda::Permission
     Properties:
-      FunctionName: !Ref EnableCallTimeRule
+      FunctionName: !Ref MCSenableRule
       Action: lambda:InvokeFunction
       Principal: events.amazonaws.com
       SourceArn: !GetAtt MCSenableRule.Arn
