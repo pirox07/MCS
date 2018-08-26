@@ -14,14 +14,8 @@ Resources:
     Type: AWS::ApiGateway::BasePathMapping
     Properties:
       DomainName: 'My_Domain_Name_placeholder'
-#      Stage: !Ref StageName
-#      Stage: !Ref Prod
-#      Stage: 'Prod'
-#      Stage: ApiGatewayApiProdStage
       RestApiId: !Ref ApiGatewayApi
       Stage: !Ref ApiGatewayApi.Stage
-#      Stage: ApiGatewayApi.Prod"Stage"
-#      Stage: !Ref ApiGatewayApi.StageName
     DependsOn: ApiGatewayApi
   MCSgetSchedule:
     Type: 'AWS::Serverless::Function'
@@ -112,7 +106,7 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Name: 'call_time'
-      ScheduleExpression: 'cron(45 00 * * ? *)'
+      ScheduleExpression: 'cron(30 01 * * ? *)'
       State: 'ENABLED'
       Targets:
         - Arn : !GetAtt
