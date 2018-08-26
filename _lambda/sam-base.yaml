@@ -100,6 +100,7 @@ Resources:
       Timeout: 3
       Tracing: Active
       Role: 'role_arn_MCS-lambda'
+      Events:
       Environment:
         Variables:
           CONTACT_REGION: 'contact_region_placeholder'
@@ -111,7 +112,7 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Name: 'call_time'
-      ScheduleExpression: 'cron(25 14 * * ? *)'
+      ScheduleExpression: 'cron(45 00 * * ? *)'
       State: 'ENABLED'
       Targets:
         - Arn : !GetAtt
@@ -129,6 +130,13 @@ Resources:
             - MCSenableRule
             - Arn
           Id : !Ref MCSenableRule
+  PermissionForEventsToInvokeLambda1:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref MCSFirestCall
+      Action: lambda:InvokeFunction
+      Principal: events.amazonaws.com
+      SourceArn: !GetAtt CallTimeRule.Arn
 #  iam_MCS-lambda:
 #    Type: AWS::IAM::Role
 #    Properties:
