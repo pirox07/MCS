@@ -112,7 +112,8 @@ Resources:
         - Arn : !GetAtt
             - MCSFirestCall
             - Arn
-          Id : !Ref MCSFirestCall
+#          Id : !Ref MCSFirestCall
+          Id : '123abc'
   EnableCallTimeRule:
     Type: AWS::Events::Rule
     Properties:
